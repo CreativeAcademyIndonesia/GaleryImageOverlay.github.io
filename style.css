@@ -1,0 +1,140 @@
+/* 13. Beri size & border pada container */
+h1 {
+    text-align: center;
+}
+
+.container {
+    width: 600px;
+    border: 2px solid greenyellow;
+    background-color: rgba(19, 19, 19, 0.5);
+    /* save */
+    /* 14. Buat supaya ketengah */
+    margin: 0 auto;
+    /* Save */
+    /* 15. Buat supaya berjejer ke kanan */
+    display: flex;
+    /* save */
+    /* 16. Buat supaya tidak overflow */
+    flex-wrap: wrap;
+    /* save */
+    /* 17. Buat supaya imagenya ketengah dari containernya */
+}
+
+/* 18. Buat supaya ga ada jarak di imgnya */
+.card {
+    display: flex;
+    /* 19. Selanjutnya kita akan buat animasi overlay title pada saat imgnya di hover/ disorot */
+    /* GO HTML */
+    position: relative;
+
+    /* 32. overflow: ; */
+    overflow: hidden;
+    /* 33. Tinggal terapkan ke card image yang lain */
+    /* GO HTML */
+}
+
+/* 21. Buat supaya titlenya naik satu dimensi */
+.img-title {
+    position: absolute;
+    /* 22. beri position relative pada .card supaya ga keluar ruang */
+    /* 23. buat background dan size */
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(5, 5, 5, .7); */
+    /* 24. Menghilangkan overlay  */
+    /* save */
+    /* 25. Buat Kondisi Awal */
+    top :200px;
+    /* 26. Buat .card:hover */
+    /* 27. Add transition */
+    transition: all .5s ease-in-out;
+    /* 28. Rubah background jadi gradient */
+    /* 29. Hapus background-color: ; */
+    background-image: linear-gradient(to bottom, rgba(5, 5, 5, 0), rgba(5,5,5,1));
+    /* 30. Buat animation Zoom */
+}
+
+/* 30. Animation Zoom 1 */
+.card img {
+    transform: scale(1);
+    transition: all .3s ease-out;
+}
+
+/* 31. Animation Zoom 2 */
+.card:hover img {
+    transform: scale(1.1);
+    transition: all .3s ease-in;
+}
+
+/* 32. Tambahkan overflow hidden pada .card */
+
+.card:hover .img-title {
+    top: 0;
+    transition: all .5s ease-out;
+}
+
+.img-title h3,p {
+    text-align: center;
+    line-height: 2px;
+    color: #fff;
+    position: relative;
+    top : 130px;
+    text-shadow: 1px 1px rgba(5, 5, 5, .5);
+}
+
+
+/* Selain slide Bottom */
+/* go position top 200 */
+
+a {
+    line-height: 0;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* bottom: 0;
+    right: 0; */
+    /* background-color: rgba(0, 0, 0, .8); */
+    /* jadi 0 */
+    background-color: rgba(0, 0, 0, 0);
+    /* save */
+    /* Tambahkan Z-index supaya naik ke atas */
+    z-index: 100;
+    /* Cut bottom & Right pindahkan ke overlay:target */
+    /* ubah opacity background */
+    /* tambahkan transisi */
+    transition: all .1s ease-in;
+    /* Tambahkan IMG pada .overlay html */
+    /* buat supaya tidak berdimensi */
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    /*  */
+    text-align: center;
+    padding: 130px 0;
+}
+
+/* Overlay ketika di taget */
+.overlay:target {
+    bottom: 0;
+    right: 0;
+    /* Add transition */
+    background-color: rgba(0, 0, 0, .8);
+    transition: all .1s ease-in;
+    /* Tambahakan width auto */
+    width: auto;
+    height: auto;
+    /* Atur Img */
+}
+
+.overlay img {
+    /* tambahkan text-align & paadding pada .overlay */
+    width: 30%;
+    margin : auto 0;
+    /* buat animation  */
+}
+
+/* Add all image */
+/* Go Javascript */
